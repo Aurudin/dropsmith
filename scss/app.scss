@@ -1,8 +1,8 @@
 @charset 'utf-8';
 
-@import 'settings';
-@import 'foundation';
-@import 'motion-ui';
+@import "settings";
+@import "foundation";
+@import "motion-ui";
 
 // Global styles
 @include foundation-global-styles;
@@ -191,7 +191,7 @@ header {
 
 /* HOME - BANNER */
 .home-banner {
-  background-image: url("/assets/img/bg-vectors-1.png");
+  background-image: url("/img/bg-vectors-1.png");
   background-position: center 10%;
   background-repeat: no-repeat;
   h1 {
@@ -246,14 +246,14 @@ header {
     text-align: center;
     padding: 70px 0 0 0;
     &:before {
-      content: url("/assets/img/icon-quote.png");
+      content: url("/img/icon-quote.png");
       left: 20px;
       margin-top: -20px;
       pointer-events: none;
       position: absolute;
     }
     &:after {
-      content: url("/assets/img/icon-quote.png");
+      content: url("/img/icon-quote.png");
       right: 20px;
       margin-top: -140px;
       pointer-events: none;
@@ -279,7 +279,7 @@ header {
 
 /* GLOBAL DATABASE */
 .global-database {
-  background-image: url("/assets/img/bg-vectors-2.png");
+  background-image: url("/img/bg-vectors-2.png");
   background-position: center 30%;
   background-repeat: no-repeat;
   .grid-x {
@@ -323,7 +323,7 @@ header {
     }
     &.lovers {
       &:before {
-        content: url("/assets/img/img-milestone-1.png");
+        content: url("/img/img-milestone-1.png");
       }
       p {
         color: #75b226;
@@ -331,7 +331,7 @@ header {
     }
     &.unique {
       &:before {
-        content: url("/assets/img/img-milestone-2.png");
+        content: url("/img/img-milestone-2.png");
       }
       p {
         color: #3895c0;
@@ -339,7 +339,7 @@ header {
     }
     &.references {
       &:before {
-        content: url("/assets/img/img-milestone-3.png");
+        content: url("/img/img-milestone-3.png");
       }
       p {
         color: #764dc0;
