@@ -84,6 +84,45 @@
 /* GLOBAL SETTING LAYOUT */
 $borde-radius: 6px;
 $font-bold: 700;
+$bg-gray: #f7f7f7;
+$padding-90: 90px 0;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bg-gray {
+  background-color: $bg-gray;
+}
+.btn {
+  background: #79b867;
+  border-radius: $borde-radius;
+  color: #ffffff;
+  display: block;
+  font-size: 26px;
+  font-weight: $font-bold;
+  max-width: 450px;
+  line-height: 63px;
+  text-align: center;
+  &.outline {
+    background-color: transparent;
+    border: 1px solid #4c4c4c;
+    color: #4c4c4c;
+    &:hover {
+      background-color: #4c4c4c;
+    }
+  }
+  &:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+}
+
+.button {
+  &:focus {
+    outline: none;
+  }
+}
 
 /* HEADER */
 header {
@@ -133,28 +172,238 @@ header {
   }
 }
 
+/* TYPING TEXT */
+.typing-text::after {
+  content: "|";
+  animation: blink ease 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 /* HOME - BANNER */
-.home-banner {  
+.home-banner {
+  background-image: url("/assets/img/bg-vectors-1.png");
+  background-position: center 10%;
+  background-repeat: no-repeat;
   h1 {
+    font-size: 66px;
     font-weight: $font-bold;
-    margin-top: 65px;
+    margin-top: 85px;
+    white-space: nowrap;
   }
   p {
     font-size: 21px;
+    margin-bottom: 40px;
   }
   .btn {
-    background: #79b867;
-    border-radius: $borde-radius;
-    color: #ffffff;
-    display: block;
-    font-size: 26px;
-    font-weight: $font-bold;
+    margin-bottom: 50px;
     max-width: 370px;
     width: 100%;
-    line-height: 72px;
+  }
+}
+
+/* HOME TESTIMONIALS */
+.testimonials {
+  .grid-x {
+    padding: $padding-90;
+  }
+  .owl-thumbs {
+    font-size: 0;
     text-align: center;
-    &:hover {
-      background: #000000;
+    &:focus {
+      outline: none;
+    }
+    .owl-thumb-item {
+      opacity: 0.5;
+      margin: 0 11px 11px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &.active {
+        opacity: 1;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .box-testimonials {
+    font-size: 22px;
+    margin: 0 auto;
+    max-width: 935px;
+    text-align: center;
+    padding: 70px 0 0 0;
+    &:before {
+      content: url("/assets/img/icon-quote.png");
+      left: 20px;
+      margin-top: -20px;
+      pointer-events: none;
+      position: absolute;
+    }
+    &:after {
+      content: url("/assets/img/icon-quote.png");
+      right: 20px;
+      margin-top: -140px;
+      pointer-events: none;
+      position: absolute;
+      transform: rotate(180deg);
+    }
+    .description {
+      line-height: 30px;
+      padding-bottom: 35px;
+    }
+    .author {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+    }
+    .job-description {
+      color: #686868;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* GLOBAL DATABASE */
+.global-database {
+  background-image: url("/assets/img/bg-vectors-2.png");
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  .grid-x {
+    padding: $padding-90;
+  }
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 70px;
+  }
+  h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    margin-top: 50px;
+  }
+  .btn {
+    margin: 0 auto;
+    max-width: 425px;
+  }
+  .milestone {
+    position: relative;
+    margin: 0 auto;
+    max-width: 260px;
+    padding: 40px 0 0 0;
+    &:before {
+      content: "";
+      opacity: 0.26;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+    .counting {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 85px;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    &.lovers {
+      &:before {
+        content: url("/assets/img/img-milestone-1.png");
+      }
+      p {
+        color: #75b226;
+      }
+    }
+    &.unique {
+      &:before {
+        content: url("/assets/img/img-milestone-2.png");
+      }
+      p {
+        color: #3895c0;
+      }
+    }
+    &.references {
+      &:before {
+        content: url("/assets/img/img-milestone-3.png");
+      }
+      p {
+        color: #764dc0;
+      }
+    }
+  }
+}
+
+/* CONTACT */
+.contact {
+  .grid-x {
+    padding: $padding-90;
+  }
+  h2 {
+    color: #32442d;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 20px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .btn {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 30px auto 0;
+    max-width: 425px;
+  }
+}
+
+/* FOOTER */
+footer {
+  .grid-x{
+    padding: 90px 0 45px;
+  }
+  .copyright {
+    color: #434343;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #484848;
+  }
+  nav {
+    .menu {
+      margin: 35px 0;
+      li {        
+        font-size: 18px;
+        &:after {
+          content: '.'
+        }
+        &:last-child:after {
+          content: ''
+        }     
+      }
+      a {
+        color: #434343;
+        padding: 0.7rem 22px;        
+        &:hover {
+          color: #79B867;
+        }        
+      }
     }
   }
 }
