@@ -245,7 +245,7 @@ header {
       margin: 30px 17px 20px;
       max-width: calc(100% - 34px);
       pointer-events: none;
-      position: absolute;      
+      position: absolute;
       width: 100%;
     }
     .play {
@@ -420,6 +420,23 @@ header {
 
 /* FOOTER */
 footer {
+  position: relative;
+  &:after {
+    content: url("../img/img-leaves.png");
+    pointer-events: none;
+    position: absolute;
+    right: 1370px;
+    top: -200px;
+    z-index: 1;
+  }
+  &:before {
+    content: url("../img/img-bottle.png");
+    left: 1600px;    
+    pointer-events: none;
+    position: absolute;
+    top: -150px;
+    z-index: 1;
+  }
   .grid-x {
     padding: 90px 0 45px;
   }
@@ -462,7 +479,7 @@ footer {
   $padding-90: 45px 0;
   // BANNER
   .home-banner {
-    text-align: center;    
+    text-align: center;
     h1 {
       font-size: 30px;
       margin-top: 0px;
@@ -530,6 +547,10 @@ footer {
   }
   //FOOTER
   footer {
+    &:after,
+    &:before {
+      display: none;
+    }
     .grid-x {
       padding: 45px 0;
     }
@@ -547,7 +568,7 @@ footer {
   }
 }
 // MEDIA QUERIE 1139PX
-@media screen and (max-width: 1139px) {
+@media screen and (max-width: 1139px) {  
   header {
     .grid-x {
       min-height: 110px;
@@ -564,6 +585,12 @@ footer {
       &:before {
         margin-top: -50px;
       }
+    }
+  }
+  footer {
+    &:after,
+    &:before {
+      display: none;
     }
   }
 }
