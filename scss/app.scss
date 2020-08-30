@@ -457,19 +457,25 @@ footer {
 }
 
 /* MEDIA QUERIES - MOBILE */
+// MEDIA QUERIE 767PX
 @media screen and (max-width: 767px) {
   $padding-90: 45px 0;
   // BANNER
   .home-banner {
-    .cell:nth-child(1) {
-      order: 1;
-    }
+    text-align: center;    
     h1 {
       font-size: 30px;
       margin-top: 0px;
     }
     p {
       font-size: 18px;
+    }
+    .btn {
+      margin: 0 auto 50px;
+    }
+    .dropsmith-video {
+      float: none;
+      margin: 0 auto;
     }
   }
   // TESTIMONIALS
@@ -524,6 +530,9 @@ footer {
   }
   //FOOTER
   footer {
+    .grid-x {
+      padding: 45px 0;
+    }
     h2 {
       font-size: 24px;
     }
@@ -537,6 +546,7 @@ footer {
     }
   }
 }
+// MEDIA QUERIE 1139PX
 @media screen and (max-width: 1139px) {
   header {
     .grid-x {
