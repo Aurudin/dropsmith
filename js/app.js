@@ -61,7 +61,7 @@ function setTyper(element, words) {
 
 /* TESTIMONIALS */
 $(document).ready(function () {
-  $(".owl-carousel").owlCarousel({
+  $("#testimonials").owlCarousel({
     // Enable thumbnails
     thumbs: true,
     // When only using images in your slide (like the demo) use this option to dynamicly create thumbnails without using the attribute data-thumb.
@@ -78,6 +78,45 @@ $(document).ready(function () {
     autoplayHoverPause: true,
     dots: false,
     loop: true,
+  });
+  $("#pricing").owlCarousel({
+    dots: false,
+    margin: 48,
+    responsive: {
+      // breakpoint from 0 up
+      0: {
+        items: 1,
+        margin: 10,
+        startPosition: 1,
+      },
+      360: {
+        items: 1,
+        margin: 12,
+        startPosition: 1,
+        stagePadding: 35,
+      },
+      // breakpoint from 480 up
+      480: {
+        items: 1,
+        startPosition: 1,
+        margin: 12,
+        stagePadding: 60,
+      },
+      768: {
+        items: 2,
+        margin: 24,
+        startPosition: 1,
+        stagePadding: 35,
+      },
+      // breakpoint from 768 up
+      1024: {
+        items: 3,
+        margin: 24,
+      },
+      1280: {
+        items: 3,
+      },
+    },
   });
 });
 

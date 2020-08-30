@@ -346,51 +346,53 @@ header {
     margin: 0 auto;
     max-width: 425px;
   }
-  .milestone {
-    position: relative;
-    margin: 0 auto;
-    max-width: 260px;
-    padding: 40px 0 0 0;
+}
+
+/* MILESTONES API */
+.milestone {
+  position: relative;
+  margin: 0 auto;
+  max-width: 260px;
+  padding: 40px 0 0 0;
+  &:before {
+    content: "";
+    opacity: 0.26;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+  .counting {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 85px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  &.lovers {
     &:before {
-      content: "";
-      opacity: 0.26;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: -1;
-    }
-    .counting {
-      font-size: 72px;
-      font-weight: 700;
-      line-height: 85px;
+      content: url("../img/img-milestone-1.png");
     }
     p {
-      font-size: 20px;
-      font-weight: 700;
+      color: #75b226;
     }
-    &.lovers {
-      &:before {
-        content: url("../img/img-milestone-1.png");
-      }
-      p {
-        color: #75b226;
-      }
+  }
+  &.unique {
+    &:before {
+      content: url("../img/img-milestone-2.png");
     }
-    &.unique {
-      &:before {
-        content: url("../img/img-milestone-2.png");
-      }
-      p {
-        color: #3895c0;
-      }
+    p {
+      color: #3895c0;
     }
-    &.references {
-      &:before {
-        content: url("../img/img-milestone-3.png");
-      }
-      p {
-        color: #764dc0;
-      }
+  }
+  &.references {
+    &:before {
+      content: url("../img/img-milestone-3.png");
+    }
+    p {
+      color: #764dc0;
     }
   }
 }
@@ -431,7 +433,7 @@ footer {
   }
   &:before {
     content: url("../img/img-bottle.png");
-    left: 1600px;    
+    left: 1600px;
     pointer-events: none;
     position: absolute;
     top: -150px;
@@ -470,6 +472,157 @@ footer {
         }
       }
     }
+  }
+}
+
+/* PAGE - PRINCING */
+.pricing {
+  background-image: url("../img/bg-vectors-3.png");
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  .grid-x {
+    padding: 45px 0 90px;
+  }
+  h1 {
+    color: #4c4c4c;
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+  h2 {
+    color: #4c4c4c;
+    font-size: 36px;
+    margin: 70px 0;
+  }
+}
+// BOX PRICING
+#pricing {
+  .box {
+    background-color: #ededed;
+    border-radius: 12px;
+    font-size: 18px;
+    margin-top: 45px;    
+    &.yearly {
+      margin-top: 6px;
+      &::before {
+        content: url("../img/img-badge.png");
+        pointer-events: none;
+        position: absolute;
+        right: -6px;
+        top: 0px;
+      }
+      .data {
+        padding: 30px;
+        h2 {
+          margin: 40px 0 5px;
+        }
+        h3 {
+          margin: 0;
+        }
+        span {
+          color: #db0080;
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+      }
+      .infos {
+        padding: 30px;
+        ul {
+          margin: 0 15px 40px;
+        }
+      }
+      .btn {
+        background-color: #db0080;
+        border-color: #db0080;
+        &:hover {
+          background-color: #ffffff;
+          border-color: #db0080;
+          color: #db0080;
+        }
+        &.started {
+          background-color: #db0080;
+          border-color: #db0080;
+          color: #ffffff;
+          &:hover {
+            background-color: #ffffff;
+            border-color: #db0080;
+            color: #db0080;
+          }
+        }
+      }
+    }
+    .data {
+      padding: 30px 45px;
+      h2 {
+        color: #000000;
+        font-size: 36px;
+        margin: 20px 0 5px;
+      }
+      h3 {
+        font-size: 30px;
+        font-weight: 200;
+      }
+      p {
+        font-size: 20px;
+        margin: 5px 0 40px;
+      }
+    }
+    .infos {
+      border-top: 1px solid #ffffff;
+      padding: 30px 45px;
+      ul {
+        margin: 0 0 40px 0;
+        list-style: none;
+        li {
+          color: #313131;
+          line-height: 48px;
+          &:before {
+            content: url(https://api.iconify.design/bi:check-circle-fill.svg?color=%2378B967&width=21&height=21);
+            vertical-align: -0.225em;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+    .btn {
+      border: 2px solid #79b867;
+      border-radius: 6px;
+      color: #ffffff;
+      font-size: 21px;
+      line-height: 59px;
+      &:hover {
+        background-color: #ffffff;
+        color: #79b867;
+      }
+      &.started {
+        background-color: #ffffff;
+        border: 2px solid #79b867;
+        color: #79b867;
+        line-height: 59px;
+        margin-bottom: 10px;
+        &:hover {
+          background-color: #79b867;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.bg-green {
+  background-color: #ddf8d5;
+  color: #374337;
+  .grid-x {
+    padding: $padding-90;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  p {
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0 auto;
+    max-width: 890px;
   }
 }
 
@@ -531,10 +684,10 @@ footer {
     h3 {
       font-size: 18px;
       margin-top: 0;
-    }
-    .milestone {
-      margin-bottom: 35px;
-    }
+    }    
+  }
+  .milestone {
+    margin-bottom: 35px;
   }
   //CONTACT
   .contact {
@@ -566,9 +719,26 @@ footer {
       }
     }
   }
+  .pricing {
+    .grid-x {
+      padding: 45px 0;
+    }
+    h1 {
+      font-size: 27px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+  }
+  .bg-green {
+    .grid-x {
+      padding: 45px 0;
+    }
+  }
 }
+
 // MEDIA QUERIE 1139PX
-@media screen and (max-width: 1139px) {  
+@media screen and (max-width: 1139px) {
   header {
     .grid-x {
       min-height: 110px;
@@ -591,6 +761,85 @@ footer {
     &:after,
     &:before {
       display: none;
+    }
+  }  
+}
+// MEDIA QUERIE 768PX
+@media screen and (max-width: 767px) {
+  #pricing {
+    .box {
+      &.yearly {
+        h2 {          
+          margin: 80px 0 5px !important;
+        }
+      }   
+      .btn {
+        font-size: 18px;
+      }
+      .data {
+        padding: 15px !important;
+        h2 {
+          font-size: 30px;          
+        }
+        h3 {
+          font-size: 20px;
+        }
+        p{
+          font-size: 16px;
+        }
+      }
+      .infos {
+        font-size: 14px;
+        padding: 15px !important;
+        ul {
+          margin: 0 0 40px !important;
+        }
+      }
+    }
+  }
+}
+// MEDIA QUERIE 768 - 1279PX
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  #pricing {
+    .box {
+      .btn {
+        font-size: 18px;
+      }
+      .data {
+        padding: 25px;
+        h2 {
+          font-size: 30px;
+        }
+        h3 {
+          font-size: 20px;
+        }
+        p{
+          font-size: 16px;
+        }
+      }
+      .infos {
+        font-size: 14px;
+        padding: 25px;
+        ul {
+          margin: 0 0 40px !important;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+  #pricing {
+    .box {
+      .data {
+        padding: 25px;
+      }
+      .infos {
+        font-size: 16px;
+        padding: 25px;
+        ul {
+          margin: 0 0 40px !important;
+        }
+      }
     }
   }
 }
