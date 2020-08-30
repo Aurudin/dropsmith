@@ -149,9 +149,9 @@ header {
   }
   .sticky {
     background-color: #ffffff;
-
     &.is-stuck {
       box-shadow: 0px 0px 10px 0px #0303036b;
+      z-index: 11;
       .grid-x {
         min-height: 105px;
       }
@@ -637,7 +637,7 @@ footer {
   }
   .home-banner {
     background-image: url("../img/bg-vectors-4.png");
-    background-position: center 0%;
+    background-position: center 90%;
   }
   .global-database {
     background-position: center 12%;
@@ -668,7 +668,7 @@ footer {
   }
   .home-banner {
     background-image: url("../img/bg-vectors-4.png");
-    background-position: center 0%;
+    background-position: center 90%;
     p {
       font-size: 24px;
       margin-bottom: 20px;
@@ -687,10 +687,46 @@ footer {
     h3 {
       font-weight: 400;
     }
-  }    
+  }
 }
 .home-b,
 .home-c {
+  .home-banner {
+    .grid-x {
+      padding-bottom: 50px;
+    }
+  }
+  .bounce-effect {
+    min-height: 535px;
+    position: relative;
+    img {
+      position: absolute;
+      &:nth-child(1) {
+        top: 200px;
+        right: 0;
+      }
+      &:nth-child(2) {
+        top: 50px;
+        right: 100px;
+      }
+      &:nth-child(3) {
+        bottom: 0px;
+        right: 30%;
+      }
+      &:nth-child(4) {
+        top: 35%;
+        right: 45%;
+      }
+      &:nth-child(5) {
+        left: 12%;
+        bottom: 15%;
+      }
+      &:nth-child(6) {
+        left: 3%;
+        top: 10%;
+      }
+    }
+  }
   .how-it-works {
     display: flex;
     padding-bottom: 90px;
@@ -915,6 +951,15 @@ footer {
         ul {
           margin: 0 0 40px !important;
         }
+      }
+    }
+  }
+  .home-b,
+  .home-c {
+    .home-banner {
+      background-image: none;
+      .grid-x {
+        padding-bottom: 0;
       }
     }
   }
