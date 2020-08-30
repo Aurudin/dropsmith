@@ -119,11 +119,27 @@ $padding-90: 90px 0;
   }
 }
 
+// REMOVE FOCUS
+*,
+img,
+button {
+  &:focus {
+    outline: none;
+  }
+}
 .button {
   margin: 0;
   &:focus {
     outline: none;
   }
+}
+
+/* MODAL YOUTUBE */
+#youtubeModal {
+  border: 0;
+  height: auto;
+  min-height: auto;
+  padding: 15px 15px 10px;
 }
 
 /* HEADER */
@@ -220,6 +236,25 @@ header {
     margin-bottom: 50px;
     max-width: 370px;
     width: 100%;
+  }
+  .dropsmith-video {
+    float: right;
+    max-width: 555px;
+    position: relative;
+    .responsive-embed {
+      margin: 30px 17px 20px;
+      max-width: calc(100% - 34px);
+      pointer-events: none;
+      position: absolute;      
+      width: 100%;
+    }
+    .play {
+      cursor: pointer;
+      margin-left: -28.5px;
+      left: 50%;
+      position: absolute;
+      top: 30%;
+    }
   }
 }
 
@@ -498,7 +533,7 @@ footer {
         &:after {
           display: none;
         }
-      }      
+      }
     }
   }
 }
@@ -518,7 +553,7 @@ footer {
     .box-testimonials {
       &:before {
         margin-top: -50px;
-      }      
+      }
     }
   }
 }
