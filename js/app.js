@@ -79,6 +79,38 @@ $(document).ready(function () {
     dots: false,
     loop: true,
   });
+  $("#howWorks").owlCarousel({
+    // Enable thumbnails
+    thumbs: true,
+    // When only using images in your slide (like the demo) use this option to dynamicly create thumbnails without using the attribute data-thumb.
+    thumbImage: false,
+    // Enable this if you have pre-rendered thumbnails in your html instead of letting this plugin generate them. This is recommended as it will prevent FOUC
+    thumbsPrerendered: true,
+    // Class that will be used on the thumbnail container
+    thumbContainerClass: "owl-thumbs",
+    // Class that will be used on the thumbnail item's
+    thumbItemClass: "owl-thumb-item",
+    items: 1,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true,
+    dots: false,
+    loop: true,
+    animateIn: "animate__fadeInDown",
+    animateOut: "animate__fadeOut",
+    responsive: {
+      // breakpoint from 0 up
+      0: {
+        items: 1,
+        mouseDrag: false,
+        touchDrag: false,
+      },
+      // breakpoint from 480 up
+      768: {
+        items: 1,
+      },
+    },
+  });
   $("#pricing").owlCarousel({
     dots: false,
     margin: 48,
