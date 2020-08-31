@@ -1,64 +1,5 @@
 $(document).foundation();
 
-// TYPING TEXT
-// get the element
-const text = document.querySelector(".typing-text");
-// make a words array
-const words = [
-  "Aromatherapists,",
-  "Professors,",
-  "Students,",
-  "Mom's,",
-  "You.",
-];
-// start typing effect
-setTyper(text, words);
-function setTyper(element, words) {
-  const LETTER_TYPE_DELAY = 75;
-  const WORD_STAY_DELAY = 1500;
-  const DIRECTION_FORWARDS = 0;
-  const DIRECTION_BACKWARDS = 1;
-
-  var direction = DIRECTION_FORWARDS;
-  var wordIndex = 0;
-  var letterIndex = 0;
-  var wordTypeInterval;
-
-  startTyping();
-
-  function startTyping() {
-    wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
-  }
-
-  function typeLetter() {
-    const word = words[wordIndex];
-    if (direction == DIRECTION_FORWARDS) {
-      letterIndex++;
-      if (letterIndex == word.length) {
-        direction = DIRECTION_BACKWARDS;
-        clearInterval(wordTypeInterval);
-        setTimeout(startTyping, WORD_STAY_DELAY);
-      }
-    } else if (direction == DIRECTION_BACKWARDS) {
-      letterIndex--;
-      if (letterIndex == 0) {
-        nextWord();
-      }
-    }
-    const textToType = word.substring(0, letterIndex);
-    element.textContent = textToType;
-  }
-
-  function nextWord() {
-    letterIndex = 0;
-    direction = DIRECTION_FORWARDS;
-    wordIndex++;
-    if (wordIndex == words.length) {
-      wordIndex = 0;
-    }
-  }
-}
-
 /* TESTIMONIALS */
 $(document).ready(function () {
   $("#testimonials").owlCarousel({
@@ -183,51 +124,51 @@ class HoverButton {
     this.calculatePosition();
     this.attachEventsListener();
   }
-  
+
   attachEventsListener() {
-    window.addEventListener('mousemove', e => this.onMouseMove(e));
-    window.addEventListener('resize', e => this.calculatePosition(e));
+    window.addEventListener("mousemove", (e) => this.onMouseMove(e));
+    window.addEventListener("resize", (e) => this.calculatePosition(e));
   }
-  
+
   calculatePosition() {
     TweenMax.set(this.el, {
       x: 0,
       y: 0,
-      scale: 1
+      scale: 1,
     });
     const box = this.el.getBoundingClientRect();
-    this.x = box.left + (box.width * 0.5);
-    this.y = box.top + (box.height * 0.5);
+    this.x = box.left + box.width * 0.5;
+    this.y = box.top + box.height * 0.5;
     this.width = box.width;
     this.height = box.height;
   }
-  
+
   onMouseMove(e) {
     let hover = false;
-    let hoverArea = (this.hover ? 0.7 : 0.5);
+    let hoverArea = this.hover ? 0.7 : 0.5;
     let x = e.clientX - this.x;
     let y = e.clientY - this.y;
-    let distance = Math.sqrt( x*x + y*y );
-    if (distance < (this.width * hoverArea)) {
-       hover = true;
-        if (!this.hover) {
-          this.hover = true;
-        }
-        this.onHover(e.clientX, e.clientY);
+    let distance = Math.sqrt(x * x + y * y);
+    if (distance < this.width * hoverArea) {
+      hover = true;
+      if (!this.hover) {
+        this.hover = true;
+      }
+      this.onHover(e.clientX, e.clientY);
     }
-    
-    if(!hover && this.hover) {
+
+    if (!hover && this.hover) {
       this.onLeave();
       this.hover = false;
     }
   }
-  
+
   onHover(x, y) {
     TweenMax.to(this.el, 0.4, {
       x: (x - this.x) * 0.4,
       y: (y - this.y) * 0.4,
       scale: 1.15,
-      ease: Power2.easeOut
+      ease: Power2.easeOut,
     });
     this.el.style.zIndex = 10;
   }
@@ -236,27 +177,26 @@ class HoverButton {
       x: 0,
       y: 0,
       scale: 1,
-      ease: Elastic.easeOut.config(1.2, 0.4)
+      ease: Elastic.easeOut.config(1.2, 0.4),
     });
     this.el.style.zIndex = 1;
   }
 }
 
-const btn1 = document.querySelector('.bounce-effect img:nth-child(1)');
+const btn1 = document.querySelector(".bounce-effect img:nth-child(1)");
 new HoverButton(btn1);
 
-const btn2 = document.querySelector('.bounce-effect img:nth-child(2)');
+const btn2 = document.querySelector(".bounce-effect img:nth-child(2)");
 new HoverButton(btn2);
 
-const btn3 = document.querySelector('.bounce-effect img:nth-child(3)');
+const btn3 = document.querySelector(".bounce-effect img:nth-child(3)");
 new HoverButton(btn3);
 
-const btn4 = document.querySelector('.bounce-effect img:nth-child(4)');
+const btn4 = document.querySelector(".bounce-effect img:nth-child(4)");
 new HoverButton(btn4);
 
-const btn5 = document.querySelector('.bounce-effect img:nth-child(5)');
+const btn5 = document.querySelector(".bounce-effect img:nth-child(5)");
 new HoverButton(btn5);
 
-const btn6 = document.querySelector('.bounce-effect img:nth-child(6)');
+const btn6 = document.querySelector(".bounce-effect img:nth-child(6)");
 new HoverButton(btn6);
-
