@@ -83,7 +83,7 @@
 }
 
 /* GLOBAL SETTING LAYOUT */
-$borde-radius: 6px;
+$borde-radius: 30px;
 $font-bold: 700;
 $bg-gray: #f7f7f7;
 $padding-90: 90px 0;
@@ -586,7 +586,7 @@ footer {
     }
     .btn {
       border: 2px solid #79b867;
-      border-radius: 6px;
+      border-radius: $borde-radius;
       color: #ffffff;
       font-size: 21px;
       line-height: 59px;

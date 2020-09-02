@@ -95,26 +95,48 @@ $(document).ready(function () {
 
 /* COUNTER STATS */
 // number count for stats, using jQuery animate
-$(".counting").each(function () {
-  var $this = $(this),
-    countTo = $this.attr("data-count");
-  $({ countNum: $this.text() }).animate(
-    {
-      countNum: countTo,
-    },
-    {
-      duration: 3000,
-      easing: "linear",
-      step: function () {
-        $this.text(Math.floor(this.countNum));
-      },
-      complete: function () {
-        $this.text(this.countNum);
-        //alert('finished');
-      },
-    }
+function visible(partial) {
+  var $t = partial,
+    $w = jQuery(window),
+    viewTop = $w.scrollTop(),
+    viewBottom = viewTop + $w.height(),
+    _top = $t.offset().top,
+    _bottom = _top + $t.height(),
+    compareTop = partial === true ? _bottom : _top,
+    compareBottom = partial === true ? _top : _bottom;
+  return (
+    compareBottom <= viewBottom && compareTop >= viewTop && $t.is(":visible")
   );
+}
+
+$(window).scroll(function () {
+  if (visible($(".counting"))) {
+    if ($(".counting").hasClass("counter-loaded")) return;
+    $(".counting").addClass("counter-loaded");
+  }
+  $(".counting").each(function () {
+    var $this = $(this),
+      countTo = $this.attr("data-count");
+    $({ countNum: $this.text() }).animate(
+      {
+        countNum: countTo,
+      },
+      {
+        duration: 3000,
+        easing: "linear",
+        step: function () {
+          $this.text(Math.floor(this.countNum));
+        },
+        complete: function () {
+          $this.text(this.countNum);
+          //alert('finished');
+        },
+      }
+    );
+  });
 });
+
+
 
 // JS PARALLAX
 class HoverButton {
