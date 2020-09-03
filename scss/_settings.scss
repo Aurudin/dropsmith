@@ -258,13 +258,13 @@ $input-error-font-weight: $global-weight-bold;
 // 7. Accordion
 // ------------
 
-$accordion-background: #E7E7E7;
+$accordion-background: #e7e7e7;
 $accordion-plusminus: true;
 $accordion-plus-content: "\002B";
 $accordion-minus-content: "\2013";
 $accordion-title-font-size: rem-calc(22);
 $accordion-item-color: #000000;
-$accordion-item-background-hover: #E7E7E7;
+$accordion-item-background-hover: #e7e7e7;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
 $accordion-content-border: 2px solid $light-gray;
@@ -743,7 +743,7 @@ $responsive-embed-ratios: (
 // ----------
 
 $reveal-background: $white;
-$reveal-width: 600px;
+$reveal-width: 830px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
 $reveal-border: 1px solid $medium-gray;
