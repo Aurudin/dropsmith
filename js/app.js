@@ -136,8 +136,6 @@ $(window).scroll(function () {
   });
 });
 
-
-
 // JS PARALLAX
 class HoverButton {
   constructor(el) {

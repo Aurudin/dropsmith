@@ -66,7 +66,7 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1250);
+$global-width: rem-calc(1260);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #79b867,
@@ -80,7 +80,7 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
+$body-background: #F8F8F8;
 $body-font-color: $black;
 $body-font-family: "ProximaNova";
 $body-antialiased: true;
@@ -879,6 +879,7 @@ $grid-columns: 12;
 $grid-margin-gutters: (
   small: 20px,
   medium: 30px,
+  large: 40px,
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
