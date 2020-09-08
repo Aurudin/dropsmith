@@ -692,6 +692,78 @@ footer {
   }
 }
 
+//MAILER LITE
+.mailerlite-form {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.mailerlite-form-description {
+  color: #979797;
+  order: 3;
+  font-size: 14px;
+  max-width: 570px;
+  margin: 15px auto 0 !important;
+  p {
+    margin: 0 !important;
+  }
+}
+.mailerlite-form-title h3 {
+  text-align: center;
+  font-size: 30px;
+  color: #32442d;
+  margin-bottom: 25px;
+}
+.mailerlite-form-field {
+  margin-bottom: 13px !important;
+  input {
+    background: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    box-shadow: none;
+    color: #656565;
+    font-size: 20px;
+    height: auto;
+    line-height: 37px;
+    margin: 0;
+    padding: 0.5rem 25px;
+    &:focus {
+      background: #f2f2f2;
+      border: 1px solid #000000;
+      box-shadow: none;
+    }
+  }
+}
+.mailerlite-subscribe-submit {
+  background-color: #ee4586;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 55px;
+  padding: 0 25px;
+  width: 100%;
+  &:hover {
+    background-color: #000000;
+  }
+}
+//MAILER LITE BLOG
+.mailer-blog {
+  .mailerlite-form-inputs {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-gap: 13px;
+  }
+  .mailerlite-subscribe-submit {
+    background-color: #79b867;
+    &:hover {
+      background-color: #000000;
+    }
+  }
+}
+
 /* PAGE - HOME B AND C */
 .home-b {
   .btn {
@@ -754,6 +826,26 @@ footer {
       font-weight: 400;
     }
   }
+  //MAILER LITE
+  .mailerlite-form-inputs .two-column {
+    margin-bottom: 13px;
+  }
+  .mailerlite-subscribe-button-container {
+    display: grid;
+    grid-gap: 13px;
+    grid-template-columns: 1fr 1fr;
+    &:after {
+      align-self: center;
+      content: "The information you provide on this form will only be used to provide you with Dropsmith's updates and special offers for personalized marketing. Your privacy is important for us!";
+      display: block;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: left;
+    }
+  }
+  .mailerlite-form-response {
+    text-align: left;
+  }
 }
 .home-b,
 .home-c {
@@ -780,15 +872,15 @@ footer {
         right: 30%;
       }
       &:nth-child(4) {
-        top: 35%;
-        right: 45%;
+        top: 38%;
+        right: 50%;
       }
       &:nth-child(5) {
-        left: 12%;
+        left: 0%;
         bottom: 15%;
       }
       &:nth-child(6) {
-        left: 3%;
+        left: -7%;
         top: 10%;
       }
     }
@@ -1261,11 +1353,6 @@ article {
   textarea {
     padding: 15px 20px;
   }
-  .two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 13px;
-  }
   .form-submit {
     margin: 0;
   }
@@ -1283,6 +1370,13 @@ article {
       color: #ffffff;
     }
   }
+}
+
+//TWO COLUMN
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 13px;
 }
 
 //RELATED POSTS
@@ -1441,6 +1535,22 @@ article {
       color: #4b4b4b;
       font-size: 24px;
       text-transform: uppercase;
+    }
+  }
+  //MAILER LITE
+  .mailerlite-form-inputs .two-column {
+    margin-bottom: 0px !important;
+    grid-gap: 0px;
+    grid-template-columns: initial;
+  }
+  .mailerlite-subscribe-button-container {
+    grid-template-columns: initial !important;
+  }
+  //MAILER LITE BLOG
+  .mailer-blog {
+    .mailerlite-form-inputs {
+      grid-template-columns: initial;
+      grid-gap: 0px;
     }
   }
 }
