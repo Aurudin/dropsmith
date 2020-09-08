@@ -945,7 +945,7 @@ footer {
 @media print, screen and (min-width: 48em) {
   .support-col {
     &.large-2 {
-      width: calc(20% - 1.875rem);
+      width: calc(20% - 2.5rem);
     }
   }
 }
