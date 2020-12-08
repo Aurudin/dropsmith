@@ -111,14 +111,15 @@
                       ></iframe>
                     </div>
                     <img src="img/img-apple-mac.jpg" alt="" />
-                    <button class="play" data-open="youtubeModal">
+                    <button class="play" data-open="youtubeModal" data-src="https://www.youtube.com/embed/YOjsqvZA9FM" data-target="#youtubeModal">
                       <img src="img/icon-play.png" alt="" />
                     </button>
-                    <div class="reveal" id="youtubeModal" data-reveal>
+                    <div class="reveal" id="youtubeModal" data-reveal data-animation-in="fade-in">
                       <iframe
                         width="100%"
                         height="350"
                         src="https://www.youtube.com/embed/YOjsqvZA9FM"
+                        id="video"
                         frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen

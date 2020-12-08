@@ -144,9 +144,8 @@ button {
 /* MODAL YOUTUBE */
 #youtubeModal {
   border: 0;
-  height: auto;
-  min-height: auto;
   padding: 15px 15px 10px;
+  top: 25% !important;
 }
 .reveal {
   height: 100%;
@@ -562,13 +561,49 @@ footer {
 }
 // BOX PRICING
 #pricing {
+  max-width: 1090px;
+  margin: 0 auto;
   .box {
     background-color: #ededed;
     border-radius: 12px;
     font-size: 18px;
     margin-top: 45px;
+    .price {
+      &.monthly {
+        display: none;
+      }
+    }
     &.yearly {
       margin-top: 6px;
+      .switch {
+        align-items: center;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        input:checked ~ .switch-paddle {
+          background: #db0080;
+        }
+        .switch-paddle {
+          border-radius: 30px;
+        }
+        .switch-paddle::after {
+          border-radius: 50%;
+        }
+        &:after,
+        &:before {
+          color: #1e1e1e;          
+          font-size: 21px;
+          font-weight: 400;
+        }
+        &:before {
+          content: 'Pay Monthly';
+          margin-right: 15px;
+        }
+        &:after {
+          content: 'Pay Yearly';
+          margin-left: 15px;
+        }
+      }
       &::before {
         content: url("../img/img-badge.png");
         pointer-events: none;
@@ -577,28 +612,38 @@ footer {
         top: 0px;
       }
       .data {
-        padding: 30px;
         h2 {
-          margin: 40px 0 5px;
+          margin: 28px 0 5px;
         }
         h3 {
           margin: 0;
         }
         span {
           color: #db0080;
-          font-size: 14px;
+          font-size: 16px;
+          font-weight: 700;
           text-transform: uppercase;
         }
       }
       .infos {
-        padding: 30px;
+        padding: 40px 65px;        
         ul {
-          margin: 0 15px 40px;
+          li {
+            &:before {
+              content: url(https://api.iconify.design/bi:check-circle-fill.svg?color=%23da0080&width=21&height=21);
+            }
+            &:first-child {
+              &::before {
+                display: none;
+              }
+            }
+          }
         }
       }
       .btn {
         background-color: #db0080;
         border-color: #db0080;
+        margin-top: 40px;
         &:hover {
           background-color: #ffffff;
           border-color: #db0080;
@@ -617,7 +662,7 @@ footer {
       }
     }
     .data {
-      padding: 30px 45px;
+      padding: 30px 65px;
       opacity: 1;
       h2 {
         color: #000000;
@@ -635,17 +680,44 @@ footer {
     }
     .infos {
       border-top: 1px solid #ffffff;
-      padding: 30px 45px;
+      padding: 40px 65px;
       ul {
-        margin: 0 0 40px 0;
+        margin: 0 0 40px;
         list-style: none;
         li {
           color: #313131;
-          line-height: 48px;
+          line-height: 24px;
+          display: flex;
+          margin-bottom: 20px;
           &:before {
             content: url(https://api.iconify.design/bi:check-circle-fill.svg?color=%2378B967&width=21&height=21);
             vertical-align: -0.225em;
             margin-right: 15px;
+          }
+        }
+        .submenu {
+          &:before {
+            content: '' !important;
+            width: 10px;            
+          }
+          ul {
+            margin: 0;
+            li {
+              margin: 0 0 10px;
+              align-items: center;
+              &:before {
+                background-color: #db0080;
+                border-radius: 50%;
+                content: '' !important;
+                height: 7px;
+                width: 7px;
+              }
+              &:first-child {
+                &::before {
+                  display: block;
+                }
+              }
+            }
           }
         }
       }
