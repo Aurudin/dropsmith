@@ -90,30 +90,7 @@ $(document).ready(function () {
         items: 2,
       },
     },
-  });
-
-  $("#planSwitch").click(function(){
-    $("#pricing .price").toggle();
-  });
-  $("#planSwitch").click(function(){
-    $("#pricing #yearly .plan").toggle();
-  });
-
-  var $videoSrc;  
-  $('.play').click(function() {
-      $videoSrc = $(this).data( "src" );
-  });
-  console.log($videoSrc);
-
-  $('#youtubeModal').on('shown.bs.modal', function (e) {
-      
-  $("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
-  })
-
-  $('#youtubeModal').on('hide.bs.modal', function (e) {
-      // a poor man's stop video
-      $("#video").attr('src',$videoSrc); 
-  }) 
+  }); 
 
 });
 
@@ -245,3 +222,13 @@ new HoverButton(btn5);
 const btn6 = document.querySelector(".bounce-effect img:nth-child(6)");
 new HoverButton(btn6);
 
+$("#planSwitch").click(function(){
+  $("#pricing .price").toggle();
+});
+$("#planSwitch").click(function(){
+  $("#pricing #yearly .plan").toggle();
+});
+
+$(".search_icon").click(function(){
+  $(".searchform").toggle();
+});
